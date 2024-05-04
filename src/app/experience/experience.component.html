@@ -1,0 +1,90 @@
+<div class="main">
+  <div class="container">
+    <div class="sub">
+      <form (ngSubmit)="onSubmit()" #form="ngForm" enctype="multipart/form-data">
+        <table cellspacing="20" class="fixed-header">
+          <tr>
+            <td></td>
+
+            <!-- <td></td> -->
+            <!-- <td><button class="nexbut" (click)="success()" >Submit</button></td> -->
+
+          </tr>
+          <tr>
+            <th>Aadhar Number</th>
+            <td><input type="text" id="aadhar" name="aadhar" [(ngModel)]="experience.Aadhar" disabled></td>
+            <span style="display: flex;align-items: end;justify-content: end;">
+              <button type="submit" class="save-button">Add
+              </button></span>
+          </tr>
+          <tr>
+            <th>Company Name<span style="color:red">*</span></th>
+            <td><input type="text" id="company" name="company" [(ngModel)]="experience.CompanyName">
+            </td>
+          </tr>
+          <tr>
+            <th>Designation<span style="color:red">*</span></th>
+            <td><input type="text" id="designation" name="designation"
+                [(ngModel)]="experience.DesignationDepartmentEmployeeNo"></td>
+          </tr>
+          <tr>
+            <th>Office Address<span style="color:red">*</span></th>
+            <td><input type="text" id="address" name="address" [(ngModel)]="experience.AddressTelephone"></td>
+          </tr>
+          <tr>
+            <th>Joining Date<span style="color:red">*</span></th>
+            <td><input type="text" id="manager" name="manager" [(ngModel)]="experience.ReportingManagerDetails">
+            </td>
+          </tr>
+          <tr>
+            <th>Releaving Date<span style="color:red">*</span></th>
+            <td><input type="text" id="dates" name="dates" [(ngModel)]="experience.EmploymentDates"></td>
+          </tr>
+          <tr>
+            <th>Annual CTC<span style="color:red">*</span></th>
+            <td><input type="text" id="ctc" name="ctc" [(ngModel)]="experience.AnnualCTC"></td>
+          </tr>
+
+          <tr>
+            <td> <button type="submit" class="save-button" (click)="edu()" style="align-items: center;">Back</button>
+            </td>
+            <td><button type="submit" class="save-button" (click)="success()"
+                style="position: relative;top:-3px;left:350px;">Save</button></td>
+          </tr>
+        </table>
+        <div *ngIf="form.submitted" class="error-message"
+          style="font-size: 20px; color: red; position: absolute;top: 800px;left:450px;">
+          Please fill the required fields.
+        </div>
+      </form>
+    </div>
+
+    <!-- Display minimized form data -->
+    <div><br>
+      <h3 class="minimized-form">Submitted Experience Details</h3>
+      <table class="table1" cellPadding="5" cellSpacing="5">
+        <thead class="head">
+          <tr>
+            <th>Company Name</th>
+            <th>designation</th>
+            <th>Address</th>
+            <th>Reporting Manager</th>
+            <th>Employee Dates</th>
+            <th>Annual CTC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let experience of experienceList">
+            <!-- <td>{{ experience.Aadhar }}</td> -->
+            <td>{{ experience.CompanyName }}</td>
+            <td>{{ experience.DesignationDepartmentEmployeeNo }}</td>
+            <td>{{ experience.AddressTelephone }}</td>
+            <td>{{ experience.ReportingManagerDetails }}</td>
+            <td>{{ experience.EmploymentDates }}</td>
+            <td>{{ experience.AnnualCTC }}</td>
+            <!-- <td>{{ experience.Year_Passed }}</td> -->
+      </table>
+    </div>
+    <!-- </div> -->
+  </div>
+</div>

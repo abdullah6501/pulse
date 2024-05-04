@@ -1,0 +1,83 @@
+<div class="full">
+    <div class="top">
+        <div class="inp">
+            <!-- <div class="search"> -->
+            <!-- <input type="number" name="text" placeholder="" class="input" [(ngModel)]="Aadhar"> -->
+            <input type="text" name="aadhar" placeholder="Aadhar" [value]="Aadhar" class="input" disabled />
+
+                        <!-- <input type="text" name="text" placeholder="" class="input" [(ngModel)]="Qualification"> -->
+                  <select id="qualification" name="qualification" [(ngModel)]="Qualification">
+                            <option selected disabled>--select--</option>
+                            <option>SSLC</option>
+                            <option>HSC</option>
+                            <option>Under Graduate</option>
+                            <option>Post Graduate</option>
+                          </select>
+
+            <span class="showbutt">
+                <button (click)="getItemById()" class="nexbut1">Show</button>
+                <input type="button" class="button" value="Profile" (click)="editpro()">
+                <input type="button" class="button1" value="Experience" (click)="editexp()">
+
+            </span>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <div class="sub-table">
+        <div *ngIf="selectedItem">
+            <form (submit)="updateItem()">
+                <table>
+                    <tr>
+                        <th>Aadhar:</th>
+                        <td><input type="text" required id="firstname" class="fixed-header" name="firstname"
+                                [(ngModel)]="selectedItem.Aadhar" disabled></td>
+                    </tr>
+                    <tr>
+                        <th>Qualification:</th>
+                        <td><input type="text" id="Middlename" class="fixed-header" name="middlename"
+                                [(ngModel)]="selectedItem.Qualification"></td>
+                    </tr>
+                    <tr>
+                        <th>Discipline:</th>
+                        <td><input type="text" required id="lastname" class="fixed-header" name="lastname"
+                                [(ngModel)]="selectedItem.Discipline"></td>
+                    </tr>
+                    <tr>
+                        <th>School_College_Institute:</th>
+                        <td><input type="date" required id="dob" class="fixed-header" name="dob"
+                                [(ngModel)]="selectedItem.School_College_Institute">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Affiliated_Board_University:</th>
+                        <td><input type="text" required id="fathername" class="fixed-header" name="fathername"
+                                [(ngModel)]="selectedItem.Affiliated_Board_University">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Marks_CGPA:</th>
+                        <td><input type="text" required id="aadhar" class="fixed-header" name="aadhar"
+                                [(ngModel)]="selectedItem.Marks_CGPA"></td>
+                    </tr>
+                    <tr>
+                        <th>Year_Enrollment:</th>
+                        <td><input type="text" required id="Hobbies" class="fixed-header" name="hobbies"
+                                [(ngModel)]="selectedItem.Year_Enrollment"></td>
+                    </tr>
+                    <tr>
+                        <th>Year_Passed:</th>
+                        <td><input type="text" required id="Language_Known" class="fixed-header" name="language"
+                                [(ngModel)]="selectedItem.Year_Passed">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="submit" class="show" class="button">Update</button></td>
+                        <td><button (click)="navigateToEducation()" class="nextButton">Next</button>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

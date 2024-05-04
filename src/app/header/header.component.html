@@ -1,0 +1,52 @@
+<div>
+    <mat-toolbar class="mat-elevation-z8" style="background-color: #3C9AB0; height:85px;">
+        <button (click)="drawer.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+            <span class="logo">
+                <img width="247" height="120"
+                    src="https://pozent.com/wp-content/uploads/2023/09/Pozent-approved-logo-01-e1694515008130.png"
+                    alt="Pozent"> </span>
+        </button>
+        <div class="admin">
+            <input type="button" class="button" value="Admin" (click)="admin()">
+            <!-- <input type="button" class="button" value="User" (click)="user()"> -->
+            <input type="button" class="button" value="Edit" (click)="edit()">
+        </div>
+
+
+
+    </mat-toolbar>
+</div>
+<mat-drawer-container autosize class="sidenav" >
+    <mat-drawer #drawer opened="true" mode="side" position="start" style="background-color: #5b7595;">
+        <mat-nav-list>
+            <mat-list-item>
+                <button  routerLink="/profile" mat-button style="color:white;"><mat-icon>perm_identity</mat-icon> TECH-PROFILE</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/education" mat-button  style="color:white;"><mat-icon>school</mat-icon>ACADEMIC</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/experience" mat-button  style="color:white;"><mat-icon>work</mat-icon> EXPERIENCE</button>
+            </mat-list-item>
+            <!-- <mat-list-item>
+                <button routerLink="/academic" mat-button><mat-icon>bookmark</mat-icon> SKILLS</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="/personal" mat-button><mat-icon>note_add</mat-icon> PERSONAL DETAILS</button>
+            </mat-list-item> -->
+            <!--<mat-list-item>
+            <button mat-button><mat-icon>help</mat-icon> Help</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-button><mat-icon>analytics</mat-icon> analytics</button>
+        </mat-list-item> -->
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content style="background-color: ivory;">
+        <div style="text-align: center;min-height: 960px;width:1220px; background-color: ivory;">
+            <router-outlet></router-outlet>
+
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

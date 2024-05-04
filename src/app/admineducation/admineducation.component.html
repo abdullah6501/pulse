@@ -1,0 +1,54 @@
+<div class="main">
+    <div class="container">
+        <div class="sub">
+            <div>
+                <div class="butt" style="padding-left: 700px;">
+                    <button (click)="downloadAllCSV()" class="dowbutcsv"><i class="fa-solid fa-file-csv"></i><i class="fa-solid fa-download"></i></button>
+                    <button (click)="downloadAllPDF()" class="dowbutpdf" [class.blur-effect]="!employee_data.length"><i class="fa-solid fa-file-pdf"></i><i class="fa-solid fa-download"></i></button>
+                    <!-- <input type="button" class="button" value="adminexperience" (click)="adminexp()"> -->
+                    <input type="button" class="dowbut" value="Admin" (click)="admin()">
+                    <input type="button" class="dowbut" id="adminedu" value="Experience" (click)="adminexp()">
+                </div>
+                <table rules="all" class="fixed-header">
+                    <thead>
+                        <tr>
+                            <th>Aadhar</th>
+                            <th>Qualification</th>
+                            <th>Discipline</th>
+                            <th>School College Institute</th>
+                            <th>Affiliate Board University</th>
+                            <th>Marks CGPA</th>
+                            <th>Year Enrollment</th>
+                            <th>Year Passed</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of employee_data">
+                            <td>{{ item.Aadhar }}</td>
+                            <td>{{ item.Qualification }}</td>
+                            <td>{{ item.Discipline }}</td>
+                            <td>{{ item.School_College_Institute }}</td>
+                            <td>{{ item.Affiliated_Board_University }}</td>
+                            <td>{{ item.Marks_CGPA }}</td>
+                            <td>{{ item.Year_Enrollment }}</td>
+                            <td>{{ item.Year_Passed }}</td>
+                            <td>
+                                <button (click)="downloadCSV(item.Aadhar)"><i class="fa fa-download"></i>
+</button>
+                            </td>
+                            <!-- Button for downloading CSV -->
+                            <!-- <td>
+                  <button (click)="deactivateEmployee(item.id)">Deactivate</button>
+                </td>
+                <td>
+                  <button (click)="activateEmployee(item.id)">Activate</button>
+                </td>
+                <td>{{item.profile_image}}</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

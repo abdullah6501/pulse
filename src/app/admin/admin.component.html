@@ -1,0 +1,130 @@
+<div class="main">
+  <div class="container" style="background-color: ivory;">
+    <div class="sub">
+      <div>
+        <div class="butt" style="padding-left: 400px; position: fixed;">
+
+          <div style="display: flex;">
+            <input type="text" [(ngModel)]="Emp_Name" placeholder="Search by Emp Name">
+            <span>
+              <button (click)="onSearchChange()"><i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+
+          <!-- Add a section to display the filtered employee data -->
+          <div>
+            <!-- Display the employee details here -->
+            <!-- <p>{{ Emp_Name }}</p> -->
+            <!-- <p>{{First_Name }}</p> -->
+            <!-- Add other details as necessary -->
+          </div>
+          <button (click)="downloadAllCSV()" class="dowbutcsv" style="background-color: rgb(5, 172, 5); display: flex;">
+            <i class="fa-solid fa-file-csv"></i><i class="fa-solid fa-download"></i>
+          </button>
+          <button (click)="downloadAllPDF()" style="background-color: red;display: flex;"
+            [class.blur-effect]="!employee_data.length" class="dowbutpdf"><i class="fa-regular fa-file-pdf"></i>
+            <i class="fa-solid fa-download"></i></button>
+
+          <!-- <input type="search" [(ngModel)]="Emp_Name" (input)="onSearchChanged()" placeholder="Employee Name"> -->
+          <input type="button" style="background-color: #17a2b8;" class="dowbut" value="Education" (click)="adminedu()">
+          <input type="button" class="dowbut" style="background-color: #17a2b8;" value="Experience"
+            (click)="adminexp()">
+        </div>
+        <div class="content" style="padding-top: 100px;">
+          <form enctype="multipart/form-data">
+            <div class="overall" style="max-height: 700px; overflow-y: auto; max-width: 1200px; overflow-x: auto;">
+              <table rules="all" class="fixed-header">
+                <thead class="head">
+                  <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Marital Status</th>
+                    <th>Blood Group</th>
+                    <th>Nationality</th>
+                    <th>Current Location</th>
+                    <th>Permanent Location</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Known Languages</th>
+                    <th>Aadhar</th>
+                    <th>Pan Card</th>
+                    <th>Passport</th>
+                    <th>Emergency Relationship</th>
+                    <th>Emergency Name</th>
+                    <th>Emergency Phone</th>
+                    <th>Download</th>
+                    <th>Activate/Deactivate</th>
+                    <th>Profile Image</th>
+                    <th>Generate</th>
+                    <th>Generated Email</th>
+                    <th>Send PDF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of employee_data">
+
+                    <td>{{ item.Emp_Name }}</td>
+                    <td>{{ item.Age }}</td>
+                    <td>{{ item.DOB | date:'yyyy-MM-dd' }}</td>
+                    <td>{{ item.Gender }}</td>
+                    <td>{{ item.Marital_Status }}</td>
+                    <td>{{ item.Blood_Group }}</td>
+                    <td>{{ item.Nationality }}</td>
+                    <td>{{ item.Current_Location }}</td>
+                    <td>{{ item.Permanent_Location }}</td>
+                    <td>{{ item.Phone }}</td>
+                    <td>{{ item.Email }}</td>
+                    <td>{{ item.Language_Known }}</td>
+                    <td>{{ item.Aadhar }}</td>
+                    <td>{{ item.PanCard }}</td>
+                    <td>{{ item.Passport }}</td>
+                    <td>{{ item.E_Relationship }}</td>
+                    <td>{{ item.E_Name }}</td>
+                    <td>{{ item.E_Phone }}</td>
+
+                    <td>
+                      <button (click)="downloadCSV(item.Aadhar)" style="height:30px;">
+                        <i class="fa-solid fa-download"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <button class="toggle" (click)="toggleActivation(item)">
+                        {{ item.is_deleted === 1 ? 'Activate' : 'Deactivate' }}
+                      </button>
+                    </td>
+                    <!--
+                <td>
+                  <button (click)="deactivateEmployee(item.Aadhar)">Deactivate</button>
+                </td>
+                <td>
+                  <button (click)="activateEmployee(item.Aadhar)">Activate</button>
+                </td> -->
+                    <!-- <td>{{item.profile_image}}</td> -->
+                    <!-- <td>
+                  <img [src]="item.profile_image_url" alt="Profile Image">
+                </td> -->
+                    <td>
+                      <img [src]="item.profile_image_url" alt="Profile Image">
+                    </td>
+                    <td>
+                      <button class="generate" (click)="generateEmail(item)">Generate</button>
+                    </td>
+                    <td>{{ item.genEmail }}</td>
+                    <td>
+                      <!-- <button class="generate" (click)="sendPDF(item.Email,employee)">Send PDF</button> -->
+                      <button class="generate" (click)="sendPDF(item.Email, item)">Send PDF</button>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

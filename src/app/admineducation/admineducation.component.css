@@ -1,0 +1,146 @@
+/* General Styles */
+/* Container for the main structure */
+.main {
+  padding: 10px;
+  width: 90%;
+  /* Adjust width as needed */
+  margin: auto;
+}
+
+/* Sub container styling */
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: ivory;
+  /* Light background color */
+}
+
+/* Flex container styling */
+.butt {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Aligns items to the start */
+  gap: 10px;
+  /* Add gap between items */
+  margin-bottom: 20px;
+  /* Add margin below the flex container */
+}
+
+/* Styling for the buttons */
+.butt button,
+.butt input[type="button"] {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.butt .dowbutcsv {
+  background-color: #28a745;
+  /* Green background */
+}
+
+.butt .dowbutpdf {
+  background-color: #dc3545;
+  /* Red background */
+}
+
+.butt .dowbut {
+  background-color: #17a2b8;
+  /* Blue background */
+}
+
+/* .butt button:hover {
+  opacity: 0.8;
+  /* Slightly darken the button on hover
+} */
+
+/* Blur effect for disabled buttons */
+/* .blur-effect {
+  filter: blur(2px);
+  cursor: not-allowed;
+} */
+
+/* Styling for the table */
+table {
+  width: 100%;
+  /* Use the full width of the container */
+  border-collapse: collapse;
+  background-color: #d9e7ed;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+table th {
+  background-color: #343a40;
+  color: white;
+  /* border-radius: 10px 10px 0 0; */
+}
+/* Button styling */
+td button {
+  padding: 10px;
+  background-color: #007bff;
+  /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Transition effects for animation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect */
+td button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  transform: scale(1.05);
+  /* Slightly increase the button size */
+}
+
+/* Icon styling */
+td button i {
+  margin-right: 5px;
+  /* Adjust space between icon and text */
+}
+
+/* Blur effect for disabled state */
+td button.blur-effect {
+  opacity: 0.5;
+  /* Reduced opacity for disabled button */
+  cursor: not-allowed;
+}
+
+/* Animation for buttons containing icons on hover */
+.main button:hover i {
+  color: #ffffff;
+  /* Change icon color to white on hover */
+  animation: bounce 0.3s ease-in-out;
+  /* Bounce animation */
+}
+
+/* Bounce animation keyframes */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    /* Start and end position */
+  }
+
+  50% {
+    transform: translateY(-4px);
+    /* Move up */
+  }
+}

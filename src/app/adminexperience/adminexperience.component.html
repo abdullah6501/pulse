@@ -1,0 +1,52 @@
+<div class="main">
+    <div class="container">
+        <div class="sub">
+            <div>
+                <div class="butt" style="padding-left: 700px;">
+                    <button (click)="downloadAllCSV()" class="dowbutcsv"><i class="fa-solid fa-file-csv"></i><i class="fa-solid fa-download"></i></button>
+                    <button (click)="downloadAllPDF()" class="dowbutpdf" id="dowpdf"
+                        [class.blur-effect]="!employee_data.length"><i class="fa-solid fa-file-pdf"></i><i class="fa-solid fa-download"></i></button>
+                    <input type="button" class="dowbut" id="adminedu" value="Admin" (click)="admin()">
+                    <input type="button" class="dowbut" id="adminexp" value="Education" (click)="adminedu()">
+                </div>
+                <table rules="all" class="fixed-header">
+                    <thead>
+                        <tr>
+                            <th>Aadhar</th>
+                            <th>Company Name</th>
+                            <th>Discipline</th>
+                            <th>Designation Department Employee No</th>
+                            <th>Address Telephone</th>
+                            <th>Reporting Manager nDetails</th>
+                            <th>Employment Dates</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of employee_data">
+                            <td>{{ item.Aadhar }}</td>
+                            <td>{{ item.CompanyName }}</td>
+                            <td>{{ item.DesignationDepartmentEmployeeNo }}</td>
+                            <td>{{ item.AddressTelephone }}</td>
+                            <td>{{ item.ReportingManagerDetails }}</td>
+                            <td>{{ item.EmploymentDates }}</td>
+                            <td>{{ item.AnnualCTC }}</td>
+                            <td>
+                                <button (click)="downloadCSV(item.Aadhar)"><i class="fa fa-download"></i>
+</button>
+                            </td>
+                            <!-- Button for downloading CSV -->
+                            <!-- <td>
+                  <button (click)="deactivateEmployee(item.id)">Deactivate</button>
+                </td>
+                <td>
+                  <button (click)="activateEmployee(item.id)">Activate</button>
+                </td>
+                <td>{{item.profile_image}}</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

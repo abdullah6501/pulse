@@ -1,0 +1,125 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container styling */
+.full {
+  width: 100%;
+  padding: 20px;
+  /* Adjusted padding */
+  background-color: ivory;
+
+}
+
+/* Top container styling */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  /* Padding between top and bottom sections */
+}
+
+/* Styling for input and buttons in top section */
+.inp {
+  display: flex;
+  gap: 10px;
+  /* Space between input and buttons */
+  align-items: center;
+  /* Vertically align input and buttons */
+}
+
+/* Styling for input fields */
+.input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  /* Adjusted width */
+}
+
+/* Styling for buttons */
+.nexbut1,
+.button,
+.button1 {
+  padding: 8px 15px;
+  margin-left: 5px;
+  /* Add space between buttons */
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  /* Blue color */
+  color: white;
+  cursor: pointer;
+}
+
+.nexbut1:hover,
+.button:hover,
+.button1:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+}
+
+/* Sub-table container styling */
+.sub-table {
+  margin-top: 20px;
+  /* Space between top and sub-table sections */
+}
+
+/* Styling for tables */
+table {
+  width: 500px;
+  /* Full width */
+  border-collapse: collapse;
+
+
+}
+.sub-table
+{
+    align-items: center;
+      justify-content: center;
+      display: flex;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+table th {
+  background-color:ivory;
+  /* Dark background color */
+  color: black;
+}
+
+table td input[type="text"] {
+  width: 100%;
+  /* Full width for text inputs */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Update button styling */
+.show {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #28a745;
+  /* Green color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Smooth transition on hover */
+}
+
+.show:hover {
+  background-color: #218838;
+  /* Darker green on hover */
+  transform: scale(1.05);
+  /* Slight scale-up on hover */
+}

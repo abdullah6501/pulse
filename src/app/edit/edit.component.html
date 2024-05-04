@@ -1,0 +1,103 @@
+<div class="full">
+  <div class="top">
+    <div class="inp">
+      <!-- <div class="search"> -->
+      <input type="number" name="text" placeholder="" class="input" [(ngModel)]="Aadhar">
+      <span class="showbutt">
+        <button (click)="getItemById()" class="nexbut1">Show</button>
+        <input type="button" class="button" value="Education" (click)="editpro()">
+        <input type="button" class="button1" value="Experience" (click)="editexp()">
+
+      </span>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="sub-table">
+    <div *ngIf="selectedItem">
+      <form (submit)="updateItem()">
+        <table>
+          <tr>
+            <th>Aadhar:</th>
+            <td><input type="text" required id="firstname" class="fixed-header" name="firstname"
+                [(ngModel)]="selectedItem.Aadhar" disabled></td>
+          </tr>
+          <tr>
+            <th>Full_Name:</th>
+            <td><input type="text" id="Middlename" class="fixed-header" name="middlename"
+                [(ngModel)]="selectedItem.Emp_Name"></td>
+          </tr>
+          <tr>
+            <th>Gender:</th>
+            <!-- <td>
+              <select name="" id="" [(ngModel)]="selectedItem.Gender">
+                <option value=""></option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+              </select>
+            </td> -->
+            <td><input type="text" required id="lastname" class="fixed-header" name="lastname"
+                [(ngModel)]="selectedItem.Gender"></td>
+          </tr>
+          <tr>
+            <th>DOB:</th>
+            <td><input type="text" required id="dob" class="fixed-header" name="dob" [(ngModel)]="selectedItem.DOB ">
+            </td>
+          </tr>
+          <tr>
+            <th>Marital_Status:</th>
+            <td><input type="text" required id="fathername" class="fixed-header" name="fathername"
+                [(ngModel)]="selectedItem.Marital_Status">
+            </td>
+          </tr>
+          <tr>
+            <th>Blood_Group:</th>
+            <td><input type="text" required id="aadhar" class="fixed-header" name="aadhar"
+                [(ngModel)]="selectedItem.Blood_Group"></td>
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <td><input type="text" required id="Hobbies" class="fixed-header" name="hobbies"
+                [(ngModel)]="selectedItem.Phone"></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td><input type="text" required id="Language_Known" class="fixed-header" name="language"
+                [(ngModel)]="selectedItem.Email">
+            </td>
+          </tr>
+          <tr>
+            <th>PanCard:</th>
+            <td><input type="text" required id="Language_Known" class="fixed-header" name="language"
+                [(ngModel)]="selectedItem.PanCard">
+            </td>
+          </tr>
+          <tr>
+            <th>Passport:</th>
+            <td><input type="text" required id="Language_Known" class="fixed-header" name="language"
+                [(ngModel)]="selectedItem.Passport">
+            </td>
+          </tr>
+          <tr>
+            <th>Current_Location:</th>
+            <td><input type="text" required id="Language_Known" class="fixed-header" name="language"
+                [(ngModel)]="selectedItem.Current_Location">
+            </td>
+          </tr>
+          <tr>
+            <th>Permanent_Location:</th>
+            <td><input type="text" required id="Language_Known" class="fixed-header" name="language"
+                [(ngModel)]="selectedItem.Permanent_Location">
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button type="submit"  class="button">Update</button></td>
+            <td><button (click)="navigateToExperience()" class="button">Next</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>

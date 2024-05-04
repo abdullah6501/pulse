@@ -1,0 +1,111 @@
+<!-- 
+<form (submit)="submitForm()">
+    <label for="qualification">Qualification:</label>
+    <input type="text" id="qualification" name="qualification" [(ngModel)]="education.Qualification" required>
+    <br>
+    <label for="discipline">Discipline:</label>
+    <input type="text" id="discipline" name="discipline" [(ngModel)]="education.Discipline" required>
+    <br>
+    <label for="schoolCollege">School/College/Institute:</label>
+    <textarea id="schoolCollege" name="schoolCollege" [(ngModel)]="education.School_College_Institute"
+        required></textarea>
+    <br>
+    <label for="affiliatedBoard">Affiliated Board/University Name & Address:</label>
+    <textarea id="affiliatedBoard" name="affiliatedBoard" [(ngModel)]="education.Affiliated_Board_University"
+        required></textarea>
+    <br>
+    <label for="marksCGPA">Marks/CGPA:</label>
+    <input type="text" id="marksCGPA" name="marksCGPA" [(ngModel)]="education.Marks_CGPA" required>
+    <br>
+    <label for="yearEnrollment">Year of Enrollment:</label>
+    <input type="text" id="yearEnrollment" name="yearEnrollment" [(ngModel)]="education.Year_Enrollment" required>
+    <br>
+    <label for="yearPassed">Year Passed:</label>
+    <input type="text" id="yearPassed" name="yearPassed" [(ngModel)]="education.Year_Passed" required>
+    <br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<table *ngIf="educationList.length > 0">
+    <thead>
+        <tr>
+            <th>Qualification</th>
+            <th>Discipline</th>
+            <th>School/College/Institute</th>
+            <th>Affiliated Board/University</th>
+            <th>Marks (%) CGPA & Class</th>
+            <th>Year of Enrollment</th>
+            <th>Year Passed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let edu of educationList">
+            <td>{{ edu.Qualification }}</td>
+            <td>{{ edu.Discipline }}</td>
+            <td>{{ edu.School_College_Institute_Name_Address }}</td>
+            <td>{{ edu.Affiliated_Board_University_Name_Address }}</td>
+            <td>{{ edu.Marks_CGPA_Class }}</td>
+            <td>{{ edu.Year_Enrollment }}</td>
+            <td>{{ edu.Year_Passed }}</td>
+        </tr>
+    </tbody>
+</table> -->
+
+<div class="main">
+    <div class="container">
+        <div class="sub">
+            <form (ngSubmit)="onsubmit()">
+                <table cellspacing="20" class="fixed-header">
+                    <tr>
+                        <th>ID:</th>
+                        <td><input type="text" id="id" name="id" [(ngModel)]="newItem.id"></td>
+                    </tr>
+                    <tr>
+                        <th>Qualification:</th>
+                        <td>
+                            <select id="qualification" name="qualification" [(ngModel)]="newItem.Qualification">
+                                <option selected disabled>--select--</option>
+                                <option>SSLC</option>
+                                <option>HSC</option>
+                                <option>Under Graduate</option>
+                                <option>Post Graduate</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Discipline:</th>
+                        <td><input type="text" id="discipline" name="discipline" [(ngModel)]="newItem.Discipline"></td>
+                    </tr>
+                    <tr>
+                        <th>School/College/Insitute:</th>
+                        <td><input type="textarea" required id="school" name="school"
+                                [(ngModel)]="newItem.School_College_Institute"></td>
+                    </tr>
+                    <tr>
+                        <th>Board/University/Affiliated:</th>
+                        <td><input type="textarea" required id="board" name="board"
+                                [(ngModel)]="newItem.Affiliated_Board_University"></td>
+                    </tr>
+                    <tr>
+                        <th>Marks/CGPA:</th>
+                        <td><input type="text" required id="marks" name="marks" [(ngModel)]="newItem.Marks_CGPA"></td>
+                    </tr>
+                    <tr>
+                        <th>Year of Enrollment:</th>
+                        <td><input type="text" id="enroll" name="enroll" [(ngModel)]="newItem.Year_Enrollment"></td>
+                    </tr>
+                    <tr>
+                        <th>Year of Passed:</th>
+                        <td><input type="text" id="passedout" name="passedout" [(ngModel)]="newItem.Year_Passed"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <!-- <td><button type="submit" class="backbtn">Back</button></td> -->
+                        <td><button type="submit" class="nexbtn">Next</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>

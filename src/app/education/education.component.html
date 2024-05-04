@@ -1,0 +1,110 @@
+<div class="main">
+  <div class="container">
+    <div class="sub">
+      <form (ngSubmit)="onSubmit()" #form="ngForm" enctype="multipart/form-data">
+        <table cellspacing="20" class="fixed-header">
+          <tr>
+            <th><label for="aadhar">Aadhaar Number</label></th>
+            <td><input type="text" id="aadhar" name="aadhar" [(ngModel)]="education.Aadhar" disabled></td>
+            <td style="display: flex;align-items: end;justify-content: end;">
+              <button type="submit" id="save" class="save-button">Add
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="qualification">Qualification<span style="color:red">*</span> </label></th>
+            <td>
+              <select id="qualification" name="qualification" [(ngModel)]="education.Qualification" style="width:310px">
+                <option selected disabled>--select--</option>
+                <option>SSLC</option>
+                <option>HSC</option>
+                <option>Under Graduate</option>
+                <option>Post Graduate</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="discipline">Field of Study<span style="color:red">*</span> </label></th>
+            <td><input type="text" id="discipline" name="discipline" [(ngModel)]="education.Discipline"></td>
+          </tr>
+          <tr>
+            <th><label for="schoolCollegeInstitute">School/College/University<span style="color:red">*</span> </label>
+            </th>
+            <td><input type="text" id="schoolCollegeInstitute" name="schoolCollegeInstitute"
+                [(ngModel)]="education.School_College_Institute"></td>
+          </tr>
+          <tr>
+            <th><label for="affiliatedBoardUniversity">Affiliated By<span style="color:red">*</span> </label></th>
+            <td><input type="text" id="affiliatedBoardUniversity" name="affiliatedBoardUniversity"
+                [(ngModel)]="education.Affiliated_Board_University"></td>
+          </tr>
+          <tr>
+            <th><label for="marksCGPA">Marks/CGPA<span style="color:red">*</span> </label></th>
+            <td><input type="number" id="marksCGPA" name="marksCGPA" [(ngModel)]="education.Marks_CGPA"></td>
+          </tr>
+          <tr>
+            <th><label for="yearEnrollment">Start year<span style="color:red">*</span> </label></th>
+            <td><input type="number" id="yearEnrollment" name="yearEnrollment" [(ngModel)]="education.Year_Enrollment">
+            </td>
+          </tr>
+          <tr>
+            <th><label for="yearPassed">End year<span style="color:red">*</span> </label></th>
+            <td><input type="number" id="yearPassed" name="yearPassed" [(ngModel)]="education.Year_Passed"></td>
+          </tr>
+
+          <tr>
+            <td>
+              <button type="submit" class="save-button" (click)="pro()">Back</button>
+
+            </td>
+            <td>
+
+            </td>
+            <td style="display: flex;align-items: end;justify-content: end;">
+              <div>
+                <button type="submit" class="save-button" (click)="exp()">Next
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div *ngIf="form.submitted" class="error-message"
+          style="font-size: 20px; color: red; position: absolute;top: 800px;left:450px;">
+          Please fill the required fields.
+        </div>
+      </form>
+    </div>
+
+    <!-- Display minimized form data -->
+    <div><br>
+      <h3 class="minimized-form">Submitted Education Details</h3>
+      <!-- <div *ngFor="let education of educationList"> -->
+      <table class="table1" style="align-items: center;" cellPadding="5" cellSpacing="5">
+        <thead class="head">
+          <tr>
+            <!-- <th>Aadhar</th> -->
+            <th>Qualification</th>
+            <th>Field of Study</th>
+            <th>School/College/University:</th>
+            <th>Affiliated By:</th>
+            <th>Marks_CGPA</th>
+            <th>Start year:</th>
+            <th>End year:</th>
+            <!-- <th>Download</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let education of educationList">
+            <!-- <td>{{ education.Aadhar }}</td> -->
+            <td>{{ education.Qualification }}</td>
+            <td>{{ education.Discipline }}</td>
+            <td>{{ education.School_College_Institute }}</td>
+            <td>{{ education.Affiliated_Board_University }}</td>
+            <td>{{ education.Marks_CGPA }}</td>
+            <td>{{ education.Year_Enrollment }}</td>
+            <td>{{ education.Year_Passed }}</td>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
